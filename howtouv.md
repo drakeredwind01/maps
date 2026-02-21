@@ -1,0 +1,1 @@
+./uv run analyze_sd_risks.py
