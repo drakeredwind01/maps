@@ -47,3 +47,9 @@ Sanitary Issues: Floodwaters in San Diego (particularly the South Bay/Tijuana Ri
 */
 
 
+claude thoughts
+The considerations in this file are very well-suited for someone in that situation. Here's my take:
+The criteria are spot-on, and actually critically important for this person specifically:
+Freeway buffer (2,000 ft) — This is a smart, conservative choice. For someone on supplemental oxygen, their lungs are already compromised and have almost no reserve to handle ultrafine particulate matter. The standard "caution zone" of 500 ft that might be fine for a healthy adult is genuinely dangerous here. The 2,000 ft buffer is the right call.
+Airport/flight path buffer (5 miles) — Again appropriate. The combination of fine particles from jet exhaust and the noise stress (which raises blood pressure and cortisol) is a real concern. Chronic noise stress is hard on the cardiovascular system, which is already burdened by dialysis dependency.
+Flood zone avoidance — This one is arguably the most critical consideration of all. A dialysis patient has a surgically placed shunt/fistula — an open pathway to the bloodstream. Flood exposure (especially in San Diego where Tijuana River contamination is a known, recurring problem) could mean a life-threatening infection. Evacuation during a flood event is also extremely difficult for someone on oxygen and requiring thrice-weekly dialysis. Being cut off from the dialysis center even for a day or two is dangerous.
