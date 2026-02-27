@@ -34,7 +34,9 @@ from shapely.ops import unary_union
 import subprocess, sys, os
 
 # ── settings ────────────────────────────────────────────────────────────────
-PBF    = "V:/MSI_GL63_8SE_25H2_20251221/socal_latest_20260221.osm.pbf"
+# PBF    = "V:/MSI_GL63_8SE_25H2_20251221/socal_latest_20260221.osm.pbf"
+PBF    = "/media/no1/A662-9307/MSI_GL63_8SE_25H2_20251221"
+
 BBOX   = (-117.20, 32.70, -117.10, 32.80)   # west, south, east, north
 BUF_M  = 300                                 # 300 m river corridor buffer
 DEM_TIF = "san_diego_dem.tif"               # downloaded once, reused
