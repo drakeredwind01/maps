@@ -8,9 +8,15 @@
 #     "contextily",
 #     "rasterio",
 #     "numpy",
-#     "elevation",
+#     "dem-stitcher",
 # ]
 # ///
+
+"""
+manual download
+sudo apt-get update
+sudo apt-get install gdal-bin curl unzip
+"""
 """
 mountain_mama_flood.py
 ----------------------
@@ -35,11 +41,30 @@ import subprocess, sys, os
 
 # ── settings ────────────────────────────────────────────────────────────────
 # PBF    = "V:/MSI_GL63_8SE_25H2_20251221/socal_latest_20260221.osm.pbf"
-PBF    = "/media/no1/A662-9307/MSI_GL63_8SE_25H2_20251221"
+# PBF    = "/media/no1/A662-9307/MSI_GL63_8SE_25H2_20251221"
+PBF    = "/home/drake/Downloads/socal-260220.osm.pbf"
 
 BBOX   = (-117.20, 32.70, -117.10, 32.80)   # west, south, east, north
 BUF_M  = 300                                 # 300 m river corridor buffer
 DEM_TIF = "san_diego_dem.tif"               # downloaded once, reused
+
+
+# ── 0. Downloading DEM via dem-stitcher ─────────────────────────────────────
+
+from dem_stitcher import stitch_dem
+import rasterio
+
+if not os.path.exists(DEM_TIF):
+    print("Downloading DEM via dem-stitcher...")
+    # This fetches the SRTM 30m data for your BBOX
+    X, p = stitch_dem(BBOX,
+                     dem_name='srtm_v3',
+                     dst_ellipsoidal_height=False,
+                     dst_area_or_point='Point')
+    
+    # Write the array to a GeoTIFF file
+    with rasterio.open(DEM_TIF, 'w', **p) as ds:
+        ds.write(X, 1)
 
 # ── 1. download DEM (SRTM 30m) if needed ─────────────────────────────────────
 if not os.path.exists(DEM_TIF):
